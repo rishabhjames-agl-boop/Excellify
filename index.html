@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mals & Rish — 29 & 30 January 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sand:#F5EFE4;--sand-mid:#E8DFD0;--sand-dark:#C5B89A;
+  --ocean:#2C5F72;--ocean-light:#4A8FA6;
+  --ink:#1E1610;--ink-mid:#4A3F34;--ink-light:#8C7D6E;
+  --brown:#6B4C3B;--brown-light:#9B7A65;
+  --white:#FDFAF5;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--ink);font-weight:300;line-height:1.7;font-size:16px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(253,250,245,0.93);backdrop-filter:blur(8px);border-bottom:0.5px solid var(--sand-dark)}
+.nav-monogram{font-family:var(--serif);font-size:1.35rem;font-weight:400;letter-spacing:0.08em;color:var(--brown);font-style:italic}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--brown)}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;background:var(--sand);position:relative;overflow:hidden}
+.hero-ocean{position:absolute;top:0;left:0;right:0;height:42%;background:linear-gradient(180deg,#B8D4DC 0%,#9EC0CC 30%,transparent 100%);opacity:0.3;pointer-events:none}
+.hero-ground{position:absolute;bottom:0;left:0;right:0;height:28%;background:linear-gradient(0deg,#D9C8B0 0%,transparent 100%);opacity:0.45;pointer-events:none}
+.hero-decor{position:absolute;inset:0;pointer-events:none;opacity:0.08}
+.hero-eyebrow{font-size:0.66rem;letter-spacing:0.38em;text-transform:uppercase;color:var(--brown);margin-bottom:2rem;font-weight:400;position:relative}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'✦';font-size:0.45rem;margin:0 0.8rem;vertical-align:middle;color:var(--brown-light)}
+.hero-names{font-family:var(--serif);font-size:clamp(4rem,11vw,8.5rem);font-weight:300;line-height:1;color:var(--ink);font-style:italic;position:relative}
+.hero-amp{color:var(--brown-light)}
+.hero-fullnames{font-family:var(--serif);font-size:1.05rem;font-weight:300;color:var(--ink-light);margin-top:0.9rem;letter-spacing:0.18em;position:relative}
+.hero-date{font-family:var(--serif);font-size:1.1rem;font-weight:300;font-style:italic;color:var(--ink-mid);margin-top:1.75rem;position:relative}
+.hero-location{font-size:0.66rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--ocean);margin-top:0.55rem;font-weight:400;position:relative}
+
+/* COUNTDOWN */
+.countdown{display:flex;margin-top:3rem;border:0.5px solid var(--sand-dark);background:rgba(253,250,245,0.65);position:relative}
+.cd-unit{display:flex;flex-direction:column;align-items:center;gap:0.3rem;padding:1.1rem 1.6rem;border-right:0.5px solid var(--sand-dark)}
+.cd-unit:last-child{border-right:none}
+.cd-num{font-family:var(--serif);font-size:2.6rem;font-weight:300;line-height:1;color:var(--brown);min-width:3ch;text-align:center}
+.cd-lbl{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-light)}
+.scroll-cue{margin-top:3rem;display:flex;flex-direction:column;align-items:center;gap:0.45rem;color:var(--ink-light);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;animation:bob 2s ease-in-out infinite;position:relative}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* SECTIONS */
+section{padding:6rem 2rem}
+.si{max-width:900px;margin:0 auto}
+.sl{font-size:0.63rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--brown);font-weight:400;margin-bottom:0.75rem}
+.st{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.4rem);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:1.5rem}
+.st em{font-style:italic;color:var(--brown)}
+.dv{width:3rem;height:0.5px;background:var(--brown-light);margin:1.25rem 0 2rem}
+p{color:var(--ink-mid);line-height:1.85;margin-bottom:1em}
+p:last-child{margin-bottom:0}
+
+/* SCHEDULE */
+#schedule{background:var(--sand)}
+.venue-link{font-size:0.8rem;color:var(--ocean);text-decoration:none;border-bottom:0.5px solid var(--ocean-light);padding-bottom:0.1rem;transition:color 0.2s}
+.venue-link:hover{color:var(--ocean-light)}
+.sched-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem}
+.day-lbl{font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--brown);font-weight:400;margin-bottom:0.4rem}
+.day-title{font-family:var(--serif);font-size:1.55rem;font-weight:300;font-style:italic;color:var(--ink);margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:0.5px solid var(--sand-dark)}
+.ev-list{list-style:none}
+.ev{display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;padding:0.9rem 0;border-bottom:0.5px solid var(--sand-mid)}
+.ev:last-child{border-bottom:none}
+.ev-time{font-family:var(--serif);font-size:0.85rem;color:var(--brown-light);font-style:italic;padding-top:0.1rem}
+.ev-name{font-size:0.9rem;font-weight:400;color:var(--ink);margin-bottom:0.18rem}
+.ev-desc{font-size:0.78rem;color:var(--ink-light);font-weight:300}
+
+/* COVERED */
+.cov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.cov-card{padding:1.75rem;background:var(--sand);border:0.5px solid var(--sand-dark)}
+.cov-icon{font-family:var(--serif);font-size:1.2rem;color:var(--ocean-light);margin-bottom:1rem;font-style:italic}
+.cov-title{font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;color:var(--ink);margin-bottom:0.9rem}
+.cov-list{list-style:none;font-size:0.84rem;color:var(--ink-mid)}
+.cov-list li{padding:0.33rem 0;border-bottom:0.5px solid var(--sand-mid);display:flex;align-items:flex-start;gap:0.55rem;line-height:1.5}
+.cov-list li::before{content:'';display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--brown-light);flex-shrink:0;margin-top:0.48rem}
+.cov-list li:last-child{border-bottom:none}
+.not-cov{margin-top:2rem;padding:1.5rem 1.75rem;border:0.5px solid var(--sand-dark);border-left:2px solid var(--sand-dark);background:var(--white)}
+.not-cov-ttl{font-size:0.63rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-light);font-weight:400;margin-bottom:0.55rem}
+.not-cov p{font-size:0.85rem}
+.diet-box{margin-top:2rem;padding:1.5rem 1.75rem;border:0.5px solid var(--sand-dark)}
+
+/* TRAVEL */
+#travel{background:var(--sand)}
+.tr-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:2.5rem}
+.tr-ttl{font-size:0.63rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ocean);font-weight:400;margin-bottom:1rem}
+.ii{padding:0.85rem 0;border-bottom:0.5px solid var(--sand-dark)}
+.ii:last-child{border-bottom:none}
+.il{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);font-weight:400;margin-bottom:0.22rem}
+.iv{font-size:0.88rem;color:var(--ink);font-weight:400;line-height:1.5}
+.is{font-size:0.76rem;color:var(--ink-light);font-weight:300}
+.tr-tip{margin-top:1.5rem;padding:1.25rem 1.5rem;border:0.5px solid rgba(44,95,114,0.22);background:rgba(44,95,114,0.04);font-size:0.85rem;color:var(--ink-mid);line-height:1.75}
+.tr-tip strong{display:block;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ocean);margin-bottom:0.35rem;font-weight:400}
+
+/* FAQ */
+.faq-list{margin-top:2rem}
+.faq-item{border-bottom:0.5px solid var(--sand-mid)}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:1.2rem 0;display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);font-size:0.91rem;font-weight:400;color:var(--ink);cursor:pointer;gap:1rem}
+.faq-arr{width:15px;height:15px;flex-shrink:0;color:var(--brown-light);transition:transform 0.25s}
+.faq-item.open .faq-arr{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease;font-size:0.87rem;color:var(--ink-mid);line-height:1.8}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:1.25rem}
+
+/* RSVP */
+#rsvp{background:var(--ink)}
+#rsvp .sl{color:var(--brown-light)}
+#rsvp .st{color:var(--white)}
+#rsvp .dv{background:var(--brown-light)}
+#rsvp .si>p{color:rgba(253,250,245,0.5)}
+.rsvp-form{margin-top:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.fg{display:flex;flex-direction:column;gap:0.4rem}
+.fg.full{grid-column:1/-1}
+label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(253,250,245,0.42);font-weight:400}
+input,select,textarea{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.11);color:var(--white);padding:0.85rem 1rem;font-family:var(--sans);font-size:0.88rem;font-weight:300;outline:none;transition:border-color 0.2s;width:100%;-webkit-appearance:none;appearance:none;border-radius:0}
+input::placeholder,textarea::placeholder{color:rgba(253,250,245,0.18)}
+input:focus,select:focus,textarea:focus{border-color:var(--brown-light)}
+select option{background:#2a1f17;color:var(--white)}
+textarea{resize:vertical;min-height:88px}
+.cb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:0.5rem}
+.cb-item{display:flex;align-items:center;gap:0.55rem;font-size:0.82rem;color:rgba(253,250,245,0.62);cursor:pointer;font-family:var(--sans);font-weight:300;text-transform:none;letter-spacing:0}
+.cb-item input[type=checkbox]{width:14px;height:14px;padding:0;flex-shrink:0;cursor:pointer;accent-color:var(--brown-light)}
+.btn-rsvp{grid-column:1/-1;background:var(--brown);color:var(--white);border:none;padding:1.1rem 2rem;font-family:var(--sans);font-size:0.68rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;cursor:pointer;transition:background 0.2s,transform 0.1s;margin-top:0.75rem}
+.btn-rsvp:hover{background:var(--brown-light)}
+.btn-rsvp:active{transform:scale(0.99)}
+.rsvp-ok{display:none;grid-column:1/-1;text-align:center;padding:2.5rem;border:0.5px solid var(--brown-light);color:var(--brown-light);font-family:var(--serif);font-size:1.55rem;font-style:italic;line-height:1.4}
+
+/* CONTACT */
+.contact-wrap{padding:4rem 2rem;text-align:center;background:var(--white)}
+
+/* FOOTER */
+footer{background:var(--ink);border-top:0.5px solid rgba(255,255,255,0.06);padding:2.5rem 2rem;text-align:center}
+.ft-names{font-family:var(--serif);font-size:1.9rem;font-weight:300;font-style:italic;color:var(--brown-light);margin-bottom:0.5rem}
+.ft-note{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(253,250,245,0.25)}
+footer a{color:rgba(253,250,245,0.3);text-decoration:none;font-size:0.76rem;display:inline-block;margin-top:1.25rem;transition:color 0.2s}
+footer a:hover{color:var(--brown-light)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:1rem 1.25rem}
+  .nav-links{gap:1.25rem}
+  .nav-links li:nth-child(n+4){display:none}
+  .sched-grid,.tr-grid{grid-template-columns:1fr}
+  .cov-grid{grid-template-columns:1fr}
+  .rsvp-form{grid-template-columns:1fr}
+  .fg.full,.btn-rsvp{grid-column:1}
+  .cb-grid{grid-template-columns:1fr 1fr}
+  .countdown{flex-wrap:wrap;justify-content:center}
+  section{padding:4rem 1.25rem}
+}
+
+/* FADE IN */
+.fi{opacity:0;transform:translateY(18px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fi.vis{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-monogram">Mals &amp; Rish</div>
+  <ul class="nav-links">
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#covered">What's Covered</a></li>
+    <li><a href="#travel">Travel</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-ocean"></div>
+  <div class="hero-ground"></div>
+  <div class="hero-decor">
+    <svg viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="160" cy="160" r="240" fill="none" stroke="#6B4C3B" stroke-width="0.6"/>
+      <circle cx="160" cy="160" r="400" fill="none" stroke="#6B4C3B" stroke-width="0.3"/>
+      <circle cx="1040" cy="740" r="280" fill="none" stroke="#2C5F72" stroke-width="0.6"/>
+      <circle cx="1040" cy="740" r="440" fill="none" stroke="#2C5F72" stroke-width="0.3"/>
+    </svg>
+  </div>
+
+  <p class="hero-eyebrow">Save the Date</p>
+  <div class="hero-names">Malaika <span class="hero-amp">&amp;</span> Rishabh</div>
+  <p class="hero-fullnames">Mals &amp; Rish</p>
+  <p class="hero-date">29th &amp; 30th January, 2027</p>
+  <p class="hero-location">Prainha Resort By The Sea &nbsp;·&nbsp; Goa, India</p>
+
+  <div class="countdown" id="countdown">
+    <div class="cd-unit"><span class="cd-num" id="cd-d">000</span><span class="cd-lbl">Days</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-h">00</span><span class="cd-lbl">Hours</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-m">00</span><span class="cd-lbl">Minutes</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-s">00</span><span class="cd-lbl">Seconds</span></div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="si fi">
+    <p class="sl">A little about us</p>
+    <h2 class="st">From Bangalore<br><em>to Melbourne,</em> to Goa</h2>
+    <div class="dv"></div>
+    <p>We both grew up in Bangalore before life took us to Melbourne — where, somewhere between Sunday markets and long evenings, we found each other. After years of adventures together, we're coming home to celebrate our wedding with the people we love most.</p>
+    <p>We chose Prainha because it felt exactly right: a private beach cove on the Arabian Sea, the kind of place that feels like it was made for sunsets and dancing. We cannot wait to share it with you.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--brown);margin-top:1.5rem;">With all our love, Malaika &amp; Rishabh</p>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="si fi">
+    <p class="sl">The Celebration</p>
+    <h2 class="st">Two days of<br><em>joy &amp; togetherness</em></h2>
+    <div class="dv"></div>
+    <p>All events will be held at <a href="https://prainha.com/weddings/" target="_blank" class="venue-link">Prainha Resort By The Sea ↗</a> — a stunning private beach cove in Dona Paula, North Goa. Please keep both days free — every moment matters to us.</p>
+
+    <div class="sched-grid">
+      <div>
+        <p class="day-lbl">Day One — 29 January</p>
+        <p class="day-title">Sangeet &amp; Mehendi</p>
+        <ul class="ev-list">
+          <li class="ev"><span class="ev-time">4:00 pm</span><div><p class="ev-name">Mehendi Ceremony</p><p class="ev-desc">Garden Lawn — henna artists, light music &amp; refreshments</p></div></li>
+          <li class="ev"><span class="ev-time">7:00 pm</span><div><p class="ev-name">Welcome Cocktails</p><p class="ev-desc">Beachside — sundowner drinks as the Arabian Sea glows</p></div></li>
+          <li class="ev"><span class="ev-time">8:30 pm</span><div><p class="ev-name">Sangeet Night</p><p class="ev-desc">Dinner, performances &amp; dancing under the stars</p></div></li>
+        </ul>
+      </div>
+      <div>
+        <p class="day-lbl">Day Two — 30 January</p>
+        <p class="day-title">Wedding &amp; Reception</p>
+        <ul class="ev-list">
+          <li class="ev"><span class="ev-time">9:00 am</span><div><p class="ev-name">Wedding Ceremony</p><p class="ev-desc">Beachfront Mandap — traditional Hindu ceremony</p></div></li>
+          <li class="ev"><span class="ev-time">12:30 pm</span><div><p class="ev-name">Wedding Lunch</p><p class="ev-desc">Garden Terrace — intimate lunch with family</p></div></li>
+          <li class="ev"><span class="ev-time">7:00 pm</span><div><p class="ev-name">Reception &amp; Dinner</p><p class="ev-desc">Gala dinner, speeches &amp; celebration</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERED -->
+<section id="covered">
+  <div class="si fi">
+    <p class="sl">Hospitality</p>
+    <h2 class="st">What we've<br><em>taken care of</em></h2>
+    <div class="dv"></div>
+    <p>We want you to arrive, relax, and be fully present with us. Here's everything we've arranged on your behalf.</p>
+
+    <div class="cov-grid">
+      <div class="cov-card">
+        <p class="cov-icon">◈ Stay</p>
+        <p class="cov-title">Accommodation</p>
+        <ul class="cov-list">
+          <li>3 nights at Prainha Resort (28–31 Jan)</li>
+          <li>Sea-view / garden rooms for all guests</li>
+          <li>Daily breakfast included</li>
+          <li>Early check-in where possible</li>
+        </ul>
+      </div>
+      <div class="cov-card">
+        <p class="cov-icon">◈ Dine</p>
+        <p class="cov-title">Food &amp; Drinks</p>
+        <ul class="cov-list">
+          <li>All event meals &amp; dinners</li>
+          <li>Welcome cocktail evening</li>
+          <li>Open bar at all events</li>
+          <li>Veg, Jain, non-veg &amp; allergy menus</li>
+        </ul>
+      </div>
+      <div class="cov-card">
+        <p class="cov-icon">◈ Move</p>
+        <p class="cov-title">Transfers</p>
+        <ul class="cov-list">
+          <li>Airport pickup &amp; drop (Goa / GOI)</li>
+          <li>Shuttles between resort &amp; all events</li>
+          <li>Please share flight details in RSVP</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="not-cov">
+      <p class="not-cov-ttl">Please arrange independently</p>
+      <p>Flights to &amp; from Goa &nbsp;·&nbsp; Visa (for international guests) &nbsp;·&nbsp; Travel insurance &nbsp;·&nbsp; Personal excursions or extensions. If you need help booking flights or have any questions, we're happy to help — just reach out.</p>
+    </div>
+
+    <div class="diet-box">
+      <p class="sl" style="margin-bottom:0.7rem;">Dietary Accommodations</p>
+      <p>We will have a full vegetarian menu, strict Jain options, and non-vegetarian choices at every meal. Please indicate all preferences in the RSVP so our caterers can plan accordingly. Severe allergies (nuts, dairy, gluten) can be accommodated with advance notice — please mention these in your RSVP notes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRAVEL -->
+<section id="travel">
+  <div class="si fi">
+    <p class="sl">Getting Here</p>
+    <h2 class="st">Travel<br><em>&amp; Arrival</em></h2>
+    <div class="dv"></div>
+    <p>Prainha is in Dona Paula, North Goa — a short 20-minute drive from Goa International Airport. We recommend arriving on <strong>28th January</strong> to settle in comfortably before the festivities begin.</p>
+
+    <div class="tr-grid">
+      <div>
+        <p class="tr-ttl">By Air</p>
+        <div class="ii"><p class="il">Nearest Airport</p><p class="iv">Goa International Airport (GOI) — Dabolim</p><p class="is">~20 min drive to Prainha, Dona Paula</p></div>
+        <div class="ii"><p class="il">From Melbourne</p><p class="iv">Connect via Mumbai, Delhi or Singapore</p><p class="is">Air India MEL→BOM→GOI recommended. ~14–16 hrs total</p></div>
+        <div class="ii"><p class="il">From Bangalore</p><p class="iv">~1 hr direct flight</p><p class="is">IndiGo, Air India &amp; Vistara — multiple daily</p></div>
+        <div class="ii"><p class="il">From Mumbai / Delhi / Chennai</p><p class="iv">1–2 hrs direct</p><p class="is">Frequent daily services on all major carriers</p></div>
+        <div class="ii"><p class="il">Venue Address</p><p class="iv">Prainha Resort By The Sea</p><p class="is">Near State Bank of India, Dona Paula, Goa 403004</p></div>
+      </div>
+      <div>
+        <p class="tr-ttl">Practical Info</p>
+        <div class="ii"><p class="il">Weather in January</p><p class="iv">Warm &amp; dry · 26–32°C</p><p class="is">Peak Goa season — sunny skies and sea breezes</p></div>
+        <div class="ii"><p class="il">Dress Code — Day 1 (Sangeet)</p><p class="iv">Festive Indian or cocktail attire</p><p class="is">Vibrant colours welcome — sarees, lehengas, sherwanis, kurtas</p></div>
+        <div class="ii"><p class="il">Dress Code — Day 2 (Wedding)</p><p class="iv">Formal Indian attire</p><p class="is">Colour palette to be shared closer to the date</p></div>
+        <div class="ii"><p class="il">Currency</p><p class="iv">Indian Rupee (INR)</p><p class="is">ATMs at the resort and Dabolim airport</p></div>
+        <div class="tr-tip"><strong>Our tip</strong>January is peak season — if you'd like to extend your stay and explore Goa's beaches, old churches or the city of Panaji, book extra nights early. We're happy to share our favourite spots!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="si fi">
+    <p class="sl">Questions</p>
+    <h2 class="st">Frequently<br><em>Asked</em></h2>
+    <div class="dv"></div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What should I wear?<svg class="faq-arr" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a">For Sangeet evening (Day 1), we'd love festive Indian or cocktail attire — lehengas, sarees, salwar suits, sherwanis, or smart kurtas. Vibrant colours very welcome! For the wedding day (Day 2), formal Indian attire is preferred. We'll share a colour palette closer to the date so everyone can coordinate beautifully.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Are children welcome?<svg class="faq-arr" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a">Absolutely — little ones are very welcome! Please include children in your RSVP headcount and note their ages so we can arrange appropriate meals and seating. Prainha has a lovely garden and beach area for them to enjoy too.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do international guests need a visa?<svg class="faq-arr" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a">Yes, most international guests need a visa to enter India. Australian passport holders can apply for an e-Tourist Visa at indianvisaonline.gov.in — it's straightforward and takes a few business days. We recommend applying at least 4 weeks before travel. If you need a formal invitation letter for your application, just let us know.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Will there be a shuttle from the airport?<svg class="faq-arr" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a">Yes! We're arranging airport pickups for all guests arriving on 28th January. Please share your flight details in the RSVP form so we can coordinate your transfer. For arrivals at other times, Prainha can also arrange a resort car — just reach out to us directly.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can I extend my stay before or after the wedding?<svg class="faq-arr" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a">We absolutely encourage it — Goa in January is magical! We've arranged a preferred rate with Prainha for guests who'd like to extend their stay. Email us and we'll connect you with the resort. We've also planned a relaxed farewell brunch on the morning of 31st January.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is there a gift registry?<svg class="faq-arr" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a">Your presence at our wedding is the only gift we truly need. If you'd like to contribute something, we have a small honeymoon fund — details available on request. Please, no large physical gifts as we'll be heading back to Melbourne!</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What's the RSVP deadline?<svg class="faq-arr" viewBox="0 0 16 16" fill="none"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-a">We kindly ask that you RSVP by 1st October 2026 so we can confirm accommodation, catering and airport transfer arrangements. If you have any difficulties please don't hesitate to email us directly at rishabh10james@gmail.com.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section id="rsvp">
+  <div class="si fi">
+    <p class="sl">Kindly respond by 1 October 2026</p>
+    <h2 class="st">Reserve<br><em>Your Place</em></h2>
+    <div class="dv"></div>
+    <p>Please complete one form per family or couple. We'll be in touch to confirm your accommodation and travel arrangements.</p>
+
+    <form class="rsvp-form" id="rsvpForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+      <div class="fg"><label for="fn">Full Name *</label><input type="text" id="fn" name="name" placeholder="Your full name" required></div>
+      <div class="fg"><label for="em">Email Address *</label><input type="email" id="em" name="email" placeholder="your@email.com" required></div>
+      <div class="fg"><label for="ph">Phone / WhatsApp</label><input type="tel" id="ph" name="phone" placeholder="+61 or +91..."></div>
+
+      <div class="fg">
+        <label for="gs">Total Guests (including yourself) *</label>
+        <select id="gs" name="guests" required>
+          <option value="" disabled selected>Select</option>
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+        </select>
+      </div>
+
+      <div class="fg">
+        <label for="at">Attending *</label>
+        <select id="at" name="attending" required>
+          <option value="" disabled selected>Select</option>
+          <option>Joyfully attending both days</option>
+          <option>Attending Day 1 only (Sangeet)</option>
+          <option>Attending Day 2 only (Wedding)</option>
+          <option>Unable to attend — sending so much love</option>
+        </select>
+      </div>
+
+      <div class="fg">
+        <label for="ff">Flying From</label>
+        <select id="ff" name="flying_from">
+          <option value="" disabled selected>Select your city</option>
+          <option>Melbourne, Australia</option>
+          <option>Sydney, Australia</option>
+          <option>Perth, Australia</option>
+          <option>Brisbane, Australia</option>
+          <option>Bangalore, India</option>
+          <option>Mumbai, India</option>
+          <option>Delhi, India</option>
+          <option>Chennai, India</option>
+          <option>Hyderabad, India</option>
+          <option>Other international</option>
+          <option>Other India</option>
+        </select>
+      </div>
+
+      <div class="fg full">
+        <label>Dietary Requirements (select all that apply)</label>
+        <div class="cb-grid">
+          <label class="cb-item"><input type="checkbox" name="diet" value="vegetarian"> Vegetarian</label>
+          <label class="cb-item"><input type="checkbox" name="diet" value="jain"> Jain</label>
+          <label class="cb-item"><input type="checkbox" name="diet" value="vegan"> Vegan</label>
+          <label class="cb-item"><input type="checkbox" name="diet" value="non-veg"> Non-vegetarian</label>
+          <label class="cb-item"><input type="checkbox" name="diet" value="gluten-free"> Gluten-free</label>
+          <label class="cb-item"><input type="checkbox" name="diet" value="nut-allergy"> Nut allergy</label>
+        </div>
+      </div>
+
+      <div class="fg full"><label for="sg">Song Request 🎵</label><input type="text" id="sg" name="song" placeholder="One song you'd love to hear on the dancefloor…"></div>
+      <div class="fg full"><label for="fl">Flight Details (if known)</label><input type="text" id="fl" name="flight_details" placeholder="e.g. AI 130 arriving Goa 28 Jan at 3:00 pm — so we can arrange your pickup"></div>
+      <div class="fg full"><label for="ms">A note for us</label><textarea id="ms" name="message" placeholder="Any questions, special requirements, or just a kind word…"></textarea></div>
+
+      <button type="submit" class="btn-rsvp">Confirm My RSVP</button>
+      <div class="rsvp-ok" id="rsvpOk">Thank you so much — we can't wait to celebrate with you in Goa!</div>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-wrap">
+  <div class="si fi" style="text-align:center">
+    <p class="sl" style="text-align:center">Get in touch</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;color:var(--brown);margin-bottom:1rem">Any questions at all? We'd love to hear from you.</p>
+    <p style="font-size:0.87rem">Email us at <a href="mailto:rishabh10james@gmail.com" style="color:var(--brown);text-decoration:none;border-bottom:0.5px solid var(--brown-light)">rishabh10james@gmail.com</a></p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="ft-names">Malaika &amp; Rishabh</p>
+  <p class="ft-note">29–30 January 2027 &nbsp;·&nbsp; Prainha Resort By The Sea, Goa &nbsp;·&nbsp; Made with love from Melbourne</p>
+  <a href="#hero">↑ Back to top</a>
+</footer>
+
+<script>
+function tick(){
+  const w=new Date('2027-01-29T09:00:00+05:30'),n=new Date(),d=w-n;
+  if(d<=0){document.getElementById('countdown').innerHTML='<div style="padding:1.5rem;font-family:\'Cormorant Garamond\',serif;font-style:italic;font-size:1.5rem;color:var(--brown)">Today is the day! 🎉</div>';return}
+  document.getElementById('cd-d').textContent=String(Math.floor(d/86400000)).padStart(3,'0');
+  document.getElementById('cd-h').textContent=String(Math.floor(d%86400000/3600000)).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(Math.floor(d%3600000/60000)).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(Math.floor(d%60000/1000)).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+
+function toggleFaq(btn){
+  const it=btn.closest('.faq-item'),was=it.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!was)it.classList.add('open');
+}
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}}),{threshold:0.08});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+
+document.getElementById('rsvpForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=this.querySelector('.btn-rsvp');
+  btn.textContent='Sending…';btn.disabled=true;
+  try{
+    const r=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+    if(r.ok){
+      this.querySelectorAll('input,select,textarea,button').forEach(el=>el.style.display='none');
+      document.getElementById('rsvpOk').style.display='block';
+    }else{btn.textContent='Something went wrong — please email rishabh10james@gmail.com';btn.disabled=false}
+  }catch{btn.textContent='Something went wrong — please email rishabh10james@gmail.com';btn.disabled=false}
+});
+</script>
+</body>
+</html>
