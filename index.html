@@ -9,10 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --cursor-dot-color:  #0d6938;
-  --cursor-dot-glow:   0 0 6px rgba(13,105,56,0.9), 0 0 16px rgba(13,105,56,0.4);
-  --cursor-ring-color: rgba(13,105,56,0.8);
-  --cursor-ring-glow:  0 0 8px rgba(13,105,56,0.25);
+  --cursor-dot-color:  #0a3d22;
+  --cursor-dot-glow:   0 0 4px rgba(10,61,34,0.35);
+  --cursor-ring-color: rgba(10,61,34,0.7);
+  --cursor-ring-glow:  0 0 4px rgba(10,61,34,0.12);
   --white:      #ffffff;
   --off-white:  #f3f8f5;
   --forest:     #0d2318;
@@ -21,6 +21,7 @@
   --green-hi:   #3db870;
   --charcoal:   #1c2b24;
   --stone:      #607068;
+  --champagne:  #c8a96a;
   --border:     rgba(13,105,56,0.14);
   --hero-h:     100svh;
   /* legacy aliases */
@@ -2184,8 +2185,8 @@ html {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(circle, rgba(13,105,56,0.05) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background:
+    radial-gradient(140% 80% at 85% -10%, rgba(13,105,56,0.04), transparent 60%);
   z-index: 0;
 }
 #case-studies .section-inner {
@@ -2250,32 +2251,69 @@ html {
   padding: 28px;
   overflow: hidden;
 }
+/* Oversized editorial index numeral — premium watermark, replaces the dot pattern */
 .case-card-thumb::before {
+  position: absolute;
+  top: -0.34em;
+  right: 0.02em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(170px, 22vw, 230px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: rgba(255,255,255,0.055);
+  pointer-events: none;
+  z-index: 0;
+}
+.case-card-thumb-1::before { content: '01'; }
+.case-card-thumb-2::before { content: '02'; }
+.case-card-thumb-3::before { content: '03'; }
+/* Soft directional light bloom for depth */
+.case-card-thumb::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
-  background-size: 22px 22px;
+  background:
+    radial-gradient(120% 95% at 82% 6%, rgba(255,255,255,0.10), transparent 55%),
+    radial-gradient(95% 80% at 10% 105%, rgba(0,0,0,0.32), transparent 60%);
   pointer-events: none;
+  z-index: 0;
 }
 .case-card-thumb-1 {
-  background: linear-gradient(135deg, #0d6938 0%, #1a8048 40%, #3db870 100%);
+  background:
+    linear-gradient(to bottom, rgba(200,169,106,0.65) 0 1px, transparent 1px),
+    linear-gradient(145deg, #0a2017 0%, #11331f 52%, #1c4a32 100%);
 }
 .case-card-thumb-2 {
-  background: linear-gradient(135deg, #0d2318 0%, #1c2b24 50%, #2a4035 100%);
+  background:
+    linear-gradient(to bottom, rgba(200,169,106,0.65) 0 1px, transparent 1px),
+    linear-gradient(145deg, #07120c 0%, #0d2318 58%, #163826 100%);
 }
 .case-card-thumb-3 {
-  background: linear-gradient(135deg, #1a3328 0%, #265142 50%, #3db870 100%);
+  background:
+    linear-gradient(to bottom, rgba(200,169,106,0.65) 0 1px, transparent 1px),
+    linear-gradient(145deg, #08201c 0%, #0e2e29 50%, #173f39 100%);
 }
 .case-card-eyebrow {
   position: relative;
   z-index: 1;
+  padding-left: 24px;
   font-family: 'DM Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.92);
   font-weight: 400;
+}
+.case-card-eyebrow::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 14px;
+  height: 1px;
+  background: var(--champagne);
+  transform: translateY(-50%);
 }
 .case-card-num {
   position: relative;
@@ -2866,37 +2904,6 @@ html {
       </div>
     </div>
 
-  </div>
-</section>
-
-<!-- TEAM -->
-<section id="team">
-  <div class="section-inner">
-    <p class="section-label char-hover reveal">The Team</p>
-    <div class="rule reveal"></div>
-    <h2 class="team-heading reveal">Strength in individuality.<br>Power in collaboration.</h2>
-    <div class="team-grid">
-      <div class="team-card reveal reveal-delay-1">
-        <div class="team-photo">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=362,fit=crop/ALpb40Rk6JS00LLv/priya-pic-mk3qOn5aLZuPxDpG.jpg" alt="Priya D'Souza" onerror="this.outerHTML='<div class=&quot;team-photo-placeholder&quot;>P</div>'">
-        </div>
-        <div class="team-info">
-          <h3 class="team-name">Priya D'Souza</h3>
-          <p class="team-title">Account Manager</p>
-          <p class="team-bio">Bringing deep domain expertise and client focus to every engagement, Priya ensures Excellify's programmes are delivered with precision and care, from brief through to execution.</p>
-        </div>
-      </div>
-      <div class="team-card reveal reveal-delay-2">
-        <div class="team-photo">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=498,fit=crop/ALpb40Rk6JS00LLv/senthil-pic-mePbZ0DpGbt2Q2Ne.jpg" alt="Senthil Nathan" onerror="this.outerHTML='<div class=&quot;team-photo-placeholder&quot;>S</div>'">
-        </div>
-        <div class="team-info">
-          <h3 class="team-name">Senthil Nathan</h3>
-          <p class="team-title">Trainer</p>
-          <p class="team-bio">An experienced facilitator with a talent for making complex concepts accessible and actionable. Senthil brings energy and depth to every workshop and development programme he leads.</p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
