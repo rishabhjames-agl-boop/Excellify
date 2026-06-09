@@ -2169,6 +2169,230 @@ html {
     clip-path: none !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   CASE STUDIES (replaces programs)
+   ═══════════════════════════════════════════════════════════════ */
+#case-studies {
+  padding: 120px 0 140px;
+  background: var(--off-white);
+  position: relative;
+  overflow: hidden;
+}
+#case-studies::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(13,105,56,0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  z-index: 0;
+}
+#case-studies .section-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.cases-header {
+  margin-bottom: 72px;
+  max-width: 760px;
+}
+.cases-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 300;
+  color: var(--charcoal);
+  margin-bottom: 24px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.cases-subhead {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--stone);
+  font-weight: 300;
+  max-width: 620px;
+}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 72px;
+}
+
+.case-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease,
+              box-shadow 0.5s ease;
+  overflow: hidden;
+  position: relative;
+}
+.case-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(13,105,56,0.35);
+  box-shadow: 0 24px 48px -24px rgba(13,35,24,0.18);
+}
+
+.case-card-thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 28px;
+  overflow: hidden;
+}
+.case-card-thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+.case-card-thumb-1 {
+  background: linear-gradient(135deg, #0d6938 0%, #1a8048 40%, #3db870 100%);
+}
+.case-card-thumb-2 {
+  background: linear-gradient(135deg, #0d2318 0%, #1c2b24 50%, #2a4035 100%);
+}
+.case-card-thumb-3 {
+  background: linear-gradient(135deg, #1a3328 0%, #265142 50%, #3db870 100%);
+}
+.case-card-eyebrow {
+  position: relative;
+  z-index: 1;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.92);
+  font-weight: 400;
+}
+.case-card-num {
+  position: relative;
+  z-index: 1;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.55);
+  font-weight: 400;
+}
+
+.case-card-body {
+  padding: 32px 32px 36px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.case-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+}
+.case-card-summary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--stone);
+  font-weight: 300;
+  margin-bottom: 28px;
+  flex: 1;
+}
+.case-card-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.case-card:hover .case-card-link {
+  gap: 14px;
+}
+
+.cases-cta {
+  text-align: center;
+}
+.cases-cta-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  font-weight: 400;
+  text-decoration: none;
+  padding: 20px 36px;
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  transition: background 0.4s ease, color 0.4s ease, gap 0.4s ease, border-color 0.4s ease;
+}
+.cases-cta-link:hover {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+  gap: 16px;
+}
+
+/* MOBILE — case studies */
+@media (max-width: 980px) {
+  .cases-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  #case-studies {
+    padding: 80px 0 100px;
+  }
+  .cases-header {
+    margin-bottom: 48px;
+  }
+  .case-card-thumb {
+    aspect-ratio: 16 / 9;
+    padding: 22px;
+  }
+  .case-card-body {
+    padding: 24px 24px 28px;
+  }
+  .case-card-title {
+    font-size: 22px;
+  }
+  .cases-heading {
+    font-size: clamp(32px, 7vw, 42px);
+  }
+  .cases-subhead {
+    font-size: 15px;
+  }
+  .cases-cta-link {
+    padding: 16px 24px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .case-card-thumb {
+    aspect-ratio: 5 / 3;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2200,7 +2424,7 @@ html {
     <button class="drawer-close" id="drawerClose" aria-label="Close">&#x2715;</button>
     <ul class="drawer-links">
       <li><a href="#offerings"  class="drawer-link">Offerings</a></li>
-      <li><a href="#programs"   class="drawer-link">Programs</a></li>
+      <li><a href="#case-studies" class="drawer-link">Case Studies</a></li>
       <li><a href="#clients"    class="drawer-link">Clients</a></li>
       <li><a href="#testimonials" class="drawer-link">Testimonials</a></li>
       <li><a href="#about"      class="drawer-link">About</a></li>
@@ -2410,130 +2634,61 @@ html {
 </section>
 
 <!-- PROGRAMS -->
-<section id="programs">
+<!-- CASE STUDIES -->
+<section id="case-studies">
   <div class="section-inner">
-    <div class="programs-header reveal">
-      <p class="section-label char-hover">Programme Portfolio</p>
+    <div class="cases-header reveal">
+      <p class="section-label char-hover">Case Studies</p>
       <div class="rule"></div>
-      <h2 class="programs-heading">Built for impact.<br>Delivered with purpose.</h2>
+      <h2 class="cases-heading">Real engagements.<br>Lasting impact.</h2>
+      <p class="cases-subhead">Selected work from twelve years of partnership with organisations across India and beyond. From sales transformations and managerial development to building HR functions from the ground up.</p>
     </div>
 
-    <div class="prog-layout">
+    <div class="cases-grid">
 
-      <!-- LEFT: vertical tab list -->
-      <div class="prog-tabs reveal">
-        <div class="prog-tab-track">
-          <div class="prog-tab-indicator" id="progIndicator"></div>
-          <button class="prog-tab active" data-tab="0">
-            <span class="prog-tab-num">01</span>
-            <span class="prog-tab-label">Sales &amp; Revenue</span>
-            <span class="prog-tab-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M8 4L11 7L8 10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
-          <button class="prog-tab" data-tab="1">
-            <span class="prog-tab-num">02</span>
-            <span class="prog-tab-label">Team &amp; Culture</span>
-            <span class="prog-tab-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M8 4L11 7L8 10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
-          <button class="prog-tab" data-tab="2">
-            <span class="prog-tab-num">03</span>
-            <span class="prog-tab-label">Leadership</span>
-            <span class="prog-tab-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M8 4L11 7L8 10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
-          <button class="prog-tab" data-tab="3">
-            <span class="prog-tab-num">04</span>
-            <span class="prog-tab-label">Organisational Development</span>
-            <span class="prog-tab-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M8 4L11 7L8 10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
-          <button class="prog-tab" data-tab="4">
-            <span class="prog-tab-num">05</span>
-            <span class="prog-tab-label">HR Systems</span>
-            <span class="prog-tab-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M8 4L11 7L8 10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
+      <!-- CARD 1: People & Performance -->
+      <a href="case-studies.html#sales-team" class="case-card reveal">
+        <div class="case-card-thumb case-card-thumb-1">
+          <span class="case-card-eyebrow">People &amp; Performance</span>
+          <span class="case-card-num">01</span>
         </div>
-      </div>
-
-      <!-- RIGHT: panel display -->
-      <div class="prog-panels reveal reveal-delay-2">
-
-        <div class="prog-panel active" data-panel="0">
-          <div class="prog-panel-label">Sales &amp; Revenue</div>
-          <div class="prog-cards">
-            <div class="prog-card">
-              <h4 class="prog-card-title">Building a High Performance Sales Team</h4>
-              <p class="prog-card-body">The sales team is the lifeblood of an organisation. We help you build revenue-driving, customer-focused teams with the skills to perform consistently at the highest level.</p>
-            </div>
-            <div class="prog-card">
-              <h4 class="prog-card-title">Customer Focus</h4>
-              <p class="prog-card-body">Empathic communication, emotional intelligence, and a deep understanding of customer needs, the foundation of lasting commercial relationships.</p>
-            </div>
-          </div>
+        <div class="case-card-body">
+          <h3 class="case-card-title">Building a high-performance sales team</h3>
+          <p class="case-card-summary">Reshaped a sales team's mindset from reactive to proactive, equipping them with ownership, communication, and customer-centred problem-solving for sustained peak performance.</p>
+          <span class="case-card-link">Read case study <span aria-hidden="true">&rarr;</span></span>
         </div>
+      </a>
 
-        <div class="prog-panel" data-panel="1">
-          <div class="prog-panel-label">Team &amp; Culture</div>
-          <div class="prog-cards">
-            <div class="prog-card">
-              <h4 class="prog-card-title">Enhancing Team Synergy</h4>
-              <p class="prog-card-body">In fast-paced environments, accelerating teamwork is critical. We help teams move faster, innovate more freely, and execute with greater cohesion and alignment.</p>
-            </div>
-            <div class="prog-card">
-              <h4 class="prog-card-title">Cultural Sensitisation</h4>
-              <p class="prog-card-body">Building culturally aware organisations through open dialogue, empathy, and reduced unconscious bias, enabling teams to collaborate meaningfully across difference.</p>
-            </div>
-            <div class="prog-card">
-              <h4 class="prog-card-title">Value Integration Programme</h4>
-              <p class="prog-card-body">Embedding organisational values into daily behaviour and decision-making, moving values from the wall to lived experience across every level.</p>
-            </div>
-          </div>
+      <!-- CARD 2: Leadership Development -->
+      <a href="case-studies.html#managerial-development" class="case-card reveal reveal-delay-1">
+        <div class="case-card-thumb case-card-thumb-2">
+          <span class="case-card-eyebrow">Leadership Development</span>
+          <span class="case-card-num">02</span>
         </div>
-
-        <div class="prog-panel" data-panel="2">
-          <div class="prog-panel-label">Leadership</div>
-          <div class="prog-cards">
-            <div class="prog-card">
-              <h4 class="prog-card-title">Leadership Essentials</h4>
-              <p class="prog-card-body">Equipping leaders with communication, decision-making, and conflict resolution skills, the core toolkit for leading with confidence and integrity.</p>
-            </div>
-            <div class="prog-card">
-              <h4 class="prog-card-title">Managerial Development Programme</h4>
-              <p class="prog-card-body">Equipping managers with the skills to foster accountability, collaboration, and strategic decision-making through immersive, interactive learning experiences.</p>
-            </div>
-            <div class="prog-card">
-              <h4 class="prog-card-title">Leading Through Change</h4>
-              <p class="prog-card-body">A comprehensive framework for navigating organisational transitions, helping leaders guide teams through change with empathy, clarity, and resilience.</p>
-            </div>
-            <div class="prog-card">
-              <h4 class="prog-card-title">Crucial Conversations</h4>
-              <p class="prog-card-body">Navigating high-stakes discussions with skill. We give your people a clear roadmap for dialogue, from preparation through to action and accountability.</p>
-            </div>
-          </div>
+        <div class="case-card-body">
+          <h3 class="case-card-title">Managerial development programme</h3>
+          <p class="case-card-summary">Equipped managers to move from task execution to strategic leadership through Capstone projects, vision boards, and immersive learning that drove real business outcomes.</p>
+          <span class="case-card-link">Read case study <span aria-hidden="true">&rarr;</span></span>
         </div>
+      </a>
 
-        <div class="prog-panel" data-panel="3">
-          <div class="prog-panel-label">Organisational Development</div>
-          <div class="prog-cards">
-            <div class="prog-card">
-              <h4 class="prog-card-title">Building an Autonomous Workforce</h4>
-              <p class="prog-card-body">When employees are aligned with organisational values, they make better decisions independently. We help you build that trust and alignment at scale.</p>
-            </div>
-            <div class="prog-card">
-              <h4 class="prog-card-title">Transformative Thinking</h4>
-              <p class="prog-card-body">Critical thinking and problem-solving for today's complex environment. We blend theory with practice to build lasting analytical capability across your organisation.</p>
-            </div>
-          </div>
+      <!-- CARD 3: HR Infrastructure -->
+      <a href="case-studies.html#hr-infrastructure-ngo" class="case-card reveal reveal-delay-2">
+        <div class="case-card-thumb case-card-thumb-3">
+          <span class="case-card-eyebrow">HR Infrastructure</span>
+          <span class="case-card-num">03</span>
         </div>
-
-        <div class="prog-panel" data-panel="4">
-          <div class="prog-panel-label">HR Systems</div>
-          <div class="prog-cards">
-            <div class="prog-card">
-              <h4 class="prog-card-title">Building a Robust HR Function</h4>
-              <p class="prog-card-body">Structuring people operations for scale, from policy architecture to talent processes, so your HR function becomes a genuine business partner.</p>
-            </div>
-          </div>
+        <div class="case-card-body">
+          <h3 class="case-card-title">HR foundations for an urban governance NGO</h3>
+          <p class="case-card-summary">Built an HR function from scratch for a non-profit transforming urban India, including policies, HRMS, performance frameworks, and growth pathways grounded in employee well-being.</p>
+          <span class="case-card-link">Read case study <span aria-hidden="true">&rarr;</span></span>
         </div>
+      </a>
 
-      </div>
+    </div>
+
+    <div class="cases-cta reveal">
+      <a href="case-studies.html" class="cases-cta-link">See all nine case studies <span aria-hidden="true">&rarr;</span></a>
     </div>
   </div>
 </section>
@@ -4110,7 +4265,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     { id: 'hero-intro', label: 'Intro' },
     { id: 'intro', label: 'Purpose' },
     { id: 'offerings', label: 'Offerings' },
-    { id: 'programs', label: 'Programs' },
+    { id: 'case-studies', label: 'Cases' },
     { id: 'clients', label: 'Clients' },
     { id: 'testimonials', label: 'Voices' },
     { id: 'about', label: 'About' },
@@ -4288,7 +4443,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     'hero-intro':   'unlocking potential',
     'intro':        'our why',
     'offerings':    'what we do',
-    'programs':     'how we work',
+    'case-studies': 'proof of work',
     'clients':      'trusted partners',
     'testimonials': 'in their words',
     'about':        'meet the founder',
