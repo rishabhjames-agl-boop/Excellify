@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies, Excellify HR Consulting</title>
+<meta name="description" content="Selected case studies from twelve years of partnering with organisations to build high-performance teams, develop leaders, and lay HR foundations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white:      #ffffff;
+  --off-white:  #f3f8f5;
+  --forest:     #0d2318;
+  --green:      #0d6938;
+  --green-mid:  #1a8048;
+  --green-hi:   #3db870;
+  --charcoal:   #1c2b24;
+  --stone:      #607068;
+  --border:     rgba(13,105,56,0.14);
+  --rule:       rgba(13,105,56,0.18);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--off-white);
+  color: var(--charcoal);
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--green); color: #fff; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+  padding: 28px 48px;
+  background: rgba(9,14,12,0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(13,105,56,0.18);
+  transition: padding 0.4s ease;
+}
+.nav-hamburger {
+  position: absolute; left: 32px; top: 50%;
+  transform: translateY(-50%);
+  width: 36px; height: 28px;
+  background: none; border: none; cursor: pointer;
+  display: flex; flex-direction: column; justify-content: center;
+  gap: 6px; padding: 0;
+}
+.nav-hamburger span {
+  display: block; height: 1.5px; width: 26px;
+  background: #f3f8f5; transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-hamburger:hover span { background: var(--green-hi); }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); background: #f3f8f5; }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); background: #f3f8f5; }
+.nav-wordmark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 400; letter-spacing: 0.06em;
+  color: #f3f8f5; text-decoration: none;
+  transition: color 0.4s ease;
+}
+.nav-wordmark:hover { color: var(--green-hi); }
+
+.nav-drawer {
+  position: fixed; top: 0; left: 0;
+  width: min(420px, 80vw); height: 100vh;
+  background: var(--forest);
+  z-index: 200;
+  transform: translateX(-100%);
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 100px 48px 48px;
+  display: flex; flex-direction: column;
+  border-right: 1px solid rgba(13,105,56,0.18);
+}
+.nav-drawer.open { transform: translateX(0); }
+.drawer-close {
+  position: absolute; top: 28px; right: 28px;
+  background: none; border: none; color: #f3f8f5;
+  font-size: 22px; cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 8px;
+}
+.drawer-close:hover { color: var(--green-hi); transform: rotate(90deg); }
+.drawer-links {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.drawer-link {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 300;
+  color: #f3f8f5; text-decoration: none;
+  display: block; padding: 12px 0;
+  transition: color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.drawer-link:hover { color: var(--green-hi); transform: translateX(8px); }
+.drawer-link.is-current { color: var(--green-hi); }
+.drawer-tagline {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em;
+  color: rgba(243,248,245,0.5);
+  text-transform: uppercase;
+  margin-top: auto;
+}
+.nav-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  z-index: 150; opacity: 0; pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.nav-overlay.open { opacity: 1; pointer-events: auto; }
+
+/* ─── PAGE HEADER ─── */
+.page-header {
+  padding: 180px 48px 80px;
+  background: var(--off-white);
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(13,105,56,0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  z-index: 0;
+}
+.page-header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--green);
+  font-weight: 400;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.rule {
+  width: 60px; height: 1px;
+  background: var(--rule);
+  margin-bottom: 32px;
+}
+.page-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 300; line-height: 1.02;
+  letter-spacing: -0.015em;
+  color: var(--charcoal);
+  margin-bottom: 24px;
+  max-width: 900px;
+}
+.page-heading em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--green);
+}
+.page-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px; line-height: 1.65;
+  color: var(--stone);
+  font-weight: 300;
+  max-width: 680px;
+}
+
+/* ─── FILTER BAR ─── */
+.cs-filter {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(243,248,245,0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 48px;
+}
+.cs-filter-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.cs-filter-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--stone);
+  margin-right: 16px;
+}
+.cs-filter-chip {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 400;
+}
+.cs-filter-chip:hover { border-color: var(--green); color: var(--green); }
+.cs-filter-chip.is-active {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+.cs-filter-count {
+  margin-left: 6px;
+  opacity: 0.6;
+  font-size: 10px;
+}
+
+/* ─── CASE STUDIES GRID ─── */
+.cs-page {
+  padding: 80px 48px 120px;
+  background: var(--off-white);
+}
+.cs-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.cs-grid[data-filter="people"] .case-study:not([data-cluster="people"]),
+.cs-grid[data-filter="leadership"] .case-study:not([data-cluster="leadership"]),
+.cs-grid[data-filter="hr"] .case-study:not([data-cluster="hr"]) {
+  display: none;
+}
+
+.case-study {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  scroll-margin-top: 120px;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.4s ease;
+}
+.case-study:target {
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px rgba(13,105,56,0.08);
+}
+.cs-header {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.cs-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--green);
+  font-weight: 400;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+.cs-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--charcoal);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.cs-content { display: flex; flex-direction: column; gap: 28px; }
+.cs-about {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--charcoal);
+  font-weight: 300;
+}
+.cs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.cs-section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--stone);
+  font-weight: 400;
+}
+.cs-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cs-list li {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--charcoal);
+  font-weight: 300;
+  padding-left: 22px;
+  position: relative;
+}
+.cs-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 10px;
+  height: 1px;
+  background: var(--green);
+}
+.cs-testimonial {
+  margin-top: 36px;
+  padding: 28px;
+  background: var(--off-white);
+  border-left: 3px solid var(--green);
+  font-style: italic;
+}
+.cs-testimonial p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--charcoal);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.cs-testimonial cite {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cs-cite-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--charcoal);
+  letter-spacing: 0.02em;
+}
+.cs-cite-role {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--stone);
+  text-transform: uppercase;
+}
+
+/* ─── BOTTOM CTA ─── */
+.cs-end {
+  background: var(--forest);
+  color: #f3f8f5;
+  padding: 120px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cs-end::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(61,184,112,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+.cs-end-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.cs-end-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px; letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-hi);
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.cs-end-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+.cs-end-heading em { font-style: italic; color: var(--green-hi); }
+.cs-end-sub {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(243,248,245,0.7);
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+.cs-end-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px; letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 18px 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  border: 1px solid;
+}
+.btn-primary {
+  background: var(--green-hi);
+  color: var(--forest);
+  border-color: var(--green-hi);
+}
+.btn-primary:hover {
+  background: #fff;
+  border-color: #fff;
+  gap: 16px;
+}
+.btn-ghost {
+  background: transparent;
+  color: #f3f8f5;
+  border-color: rgba(243,248,245,0.3);
+}
+.btn-ghost:hover {
+  border-color: #f3f8f5;
+  gap: 16px;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--forest);
+  color: rgba(243,248,245,0.7);
+  padding: 40px 48px;
+  border-top: 1px solid rgba(243,248,245,0.08);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ─── REVEAL ANIMATIONS ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── MOBILE ─── */
+@media (max-width: 980px) {
+  nav { padding: 20px 24px; }
+  .nav-hamburger { left: 20px; }
+  .page-header { padding: 140px 24px 60px; }
+  .page-heading { font-size: clamp(32px, 8vw, 48px); }
+  .page-sub { font-size: 16px; }
+  .cs-filter { padding: 16px 24px; }
+  .cs-filter-label { width: 100%; margin-right: 0; margin-bottom: 8px; }
+  .cs-filter-chip { padding: 8px 14px; font-size: 10px; }
+  .cs-page { padding: 60px 24px 80px; }
+  .cs-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .case-study { padding: 32px 28px; }
+  .cs-title { font-size: 26px; }
+  .cs-testimonial { padding: 22px; }
+  .cs-testimonial p { font-size: 16px; }
+  .cs-end { padding: 80px 24px; }
+  .nav-drawer { padding: 90px 32px 32px; }
+  .drawer-link { font-size: 26px; }
+}
+
+@media (max-width: 640px) {
+  .cs-end-actions { flex-direction: column; align-items: stretch; }
+  .btn { justify-content: center; padding: 16px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="index.html" class="nav-wordmark">Excellify</a>
+  <div class="nav-drawer" id="navDrawer">
+    <button class="drawer-close" id="drawerClose" aria-label="Close">&#x2715;</button>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link">Home</a></li>
+      <li><a href="index.html#offerings" class="drawer-link">Offerings</a></li>
+      <li><a href="case-studies.html" class="drawer-link is-current">Case Studies</a></li>
+      <li><a href="index.html#clients" class="drawer-link">Clients</a></li>
+      <li><a href="index.html#testimonials" class="drawer-link">Testimonials</a></li>
+      <li><a href="index.html#about" class="drawer-link">About</a></li>
+      <li><a href="index.html#contact" class="drawer-link">Contact</a></li>
+    </ul>
+    <p class="drawer-tagline">Potential to Excellence</p>
+  </div>
+  <div class="nav-overlay" id="navOverlay"></div>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <span class="section-label">Case Studies</span>
+    <div class="rule"></div>
+    <h1 class="page-heading">Twelve years of <em>partnership.</em><br>Nine engagements worth telling.</h1>
+    <p class="page-sub">Each story below is a real engagement with a real client. We have grouped them into three clusters so you can find what matches your context fastest. Behind every one of these is a team that came out stronger.</p>
+  </div>
+</header>
+
+<!-- FILTER -->
+<div class="cs-filter">
+  <div class="cs-filter-inner">
+    <span class="cs-filter-label">Filter by focus area</span>
+    <button class="cs-filter-chip is-active" data-filter="all">All <span class="cs-filter-count">9</span></button>
+    <button class="cs-filter-chip" data-filter="people">People &amp; Performance <span class="cs-filter-count">4</span></button>
+    <button class="cs-filter-chip" data-filter="leadership">Leadership Development <span class="cs-filter-count">3</span></button>
+    <button class="cs-filter-chip" data-filter="hr">HR Infrastructure <span class="cs-filter-count">2</span></button>
+  </div>
+</div>
+
+<!-- CASE STUDIES -->
+<section class="cs-page">
+  <div class="cs-grid" id="csGrid" data-filter="all">
+
+    <!-- ─── 1. SALES TEAM ─── -->
+    <article class="case-study reveal" id="sales-team" data-cluster="people">
+      <header class="cs-header">
+        <span class="cs-eyebrow">People &amp; Performance</span>
+        <h2 class="cs-title">Building a high-performance sales team</h2>
+      </header>
+      <div class="cs-content">
+        <p class="cs-about">The sales team is the lifeblood of an organisation, driving revenue, customer acquisition, and market expansion. We were brought in to kickstart a transformative journey, focused on sharpening communication, fostering creative problem-solving, and strengthening cohesion, trust, and accountability.</p>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Challenges</h4>
+          <ul class="cs-list">
+            <li>Communication that did not land with customers, limiting interactions and creative problem-solving</li>
+            <li>Team cohesion that needed nurturing through mutual understanding, trust, and accountability</li>
+            <li>Self-management gaps preventing continuous personal and professional growth</li>
+            <li>Limited networking and best-practice sharing across the team</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Solutions</h4>
+          <ul class="cs-list">
+            <li>Fostered an empowering sales mindset built on proactivity, ownership of outcomes, and accountability to organisational goals</li>
+            <li>Equipped participants with tools for time management, task prioritisation, and high-impact focus</li>
+            <li>Built active listening skills, empathy, probing questions, and creative problem-solving for stronger customer connection</li>
+            <li>Emphasised continuous learning, skill enhancement, personal well-being, and resilience</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Outcome</h4>
+          <ul class="cs-list">
+            <li>Participants developed an empowered, ownership-led sales mindset</li>
+            <li>Clear objectives and action plans aligned to organisational goals, anchored in customer centricity</li>
+            <li>Acquired strategies for time management, prioritisation, and high-impact endeavours</li>
+            <li>Stronger collaboration, deeper customer relationships, sustained peak performance</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- ─── 2. TEAM SYNERGY ─── -->
+    <article class="case-study reveal" id="team-synergy" data-cluster="people">
+      <header class="cs-header">
+        <span class="cs-eyebrow">People &amp; Performance</span>
+        <h2 class="cs-title">Enhancing team synergy</h2>
+      </header>
+      <div class="cs-content">
+        <p class="cs-about">In fast-paced environments, accelerating teamwork is critical. High-performing teams move quicker, innovate more freely, and adapt with less friction. The brief was to lift collaboration, communication, and efficiency through clearer goals, stronger trust, and consistent feedback rhythms.</p>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Challenges</h4>
+          <ul class="cs-list">
+            <li>Communication gaps slowing down transitions and synergy</li>
+            <li>Resistance to change reducing the pace of deliverables</li>
+            <li>Lack of trust limiting open collaboration and information sharing</li>
+            <li>Time management and prioritisation struggles driving stress and delays</li>
+            <li>Misalignment causing misunderstandings and conflicts within the team</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Solutions</h4>
+          <ul class="cs-list">
+            <li>Activities to surface personality differences and their impact on team dynamics</li>
+            <li>Empathic communication tools to influence outcomes and align on shared goals</li>
+            <li>Frameworks for managing resistance and navigating change smoothly</li>
+            <li>Trust-building exercises to create a supportive, collaborative environment</li>
+            <li>Prioritisation methods to optimise productivity and reduce stress</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Outcome</h4>
+          <ul class="cs-list">
+            <li>Empathic communication adopted as a default, lifting influence and shared focus</li>
+            <li>Practical strategies for navigating transitions and adapting quickly</li>
+            <li>Trust restored as the foundation of stronger team relationships</li>
+            <li>Prioritisation discipline embedded, increasing focus and reducing stress</li>
+          </ul>
+        </div>
+
+        <blockquote class="cs-testimonial">
+          <p>&ldquo;Excellify has been a valuable partner in supporting a number of our CoE initiatives at Wipro Enterprises. Their ability to understand our context, design relevant solutions, and drive meaningful engagement across levels has made a real difference.&rdquo;</p>
+          <cite>
+            <span class="cs-cite-name">Vikrant Gupta</span>
+            <span class="cs-cite-role">CHRO, Wipro Enterprises</span>
+          </cite>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- ─── 3. AUTONOMOUS WORKFORCE ─── -->
+    <article class="case-study reveal" id="autonomous-workforce" data-cluster="people">
+      <header class="cs-header">
+        <span class="cs-eyebrow">People &amp; Performance</span>
+        <h2 class="cs-title">Building an autonomous workforce</h2>
+      </header>
+      <div class="cs-content">
+        <p class="cs-about">An autonomous workforce makes better, faster decisions when those decisions are anchored in shared values. The session was designed to deepen employee alignment with organisational values through dynamic, interactive experiences that moved values from posters on a wall to lived behaviour.</p>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Challenges</h4>
+          <ul class="cs-list">
+            <li>Employees unclear on what the company values meant, and why they mattered</li>
+            <li>Individual behaviours not fully aligned with organisational expectations</li>
+            <li>Difficulty applying values consciously in everyday work</li>
+            <li>No common space to reflect on personal alignment with values</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Solutions</h4>
+          <ul class="cs-list">
+            <li>Engaging interpretations of each value, brought to life in plain language</li>
+            <li>Activities that visualised how values apply in daily operations</li>
+            <li>Personal reflection prompts for individual alignment</li>
+            <li>Team brainstorming to surface shared values and how to live them</li>
+            <li>Interactive discussions to identify concrete next steps</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Outcome</h4>
+          <ul class="cs-list">
+            <li>Employees gained clarity and a better understanding of organisational values</li>
+            <li>A networking platform for the team to know each other better and collaborate</li>
+            <li>Shared values explored collectively across teams</li>
+            <li>Greater confidence in embodying values in professional interactions</li>
+            <li>Participant recommendations to management for strengthening specific values</li>
+          </ul>
+        </div>
+
+        <blockquote class="cs-testimonial">
+          <p>&ldquo;Their expertise and dedication in aligning our entire organisation with our core values have been transformative. The Excellify facilitators engaged with participants in an interactive and meaningful way, making the programme highly relevant and impactful.&rdquo;</p>
+          <cite>
+            <span class="cs-cite-name">Ranjith K P</span>
+            <span class="cs-cite-role">HR Director, Palo Alto Networks</span>
+          </cite>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- ─── 4. CULTURAL SENSITISATION ─── -->
+    <article class="case-study reveal" id="cultural-sensitization" data-cluster="people">
+      <header class="cs-header">
+        <span class="cs-eyebrow">People &amp; Performance</span>
+        <h2 class="cs-title">Cultural sensitisation</h2>
+      </header>
+      <div class="cs-content">
+        <p class="cs-about">Cultural sensitivity is foundational for cohesive, inclusive teams. Understanding diverse perspectives lifts communication, innovation, and problem-solving. The programme used interactive workshops, real-life scenarios, and continuous learning to help teams collaborate more effectively and create an inclusive work environment that leverages diversity.</p>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Challenges</h4>
+          <ul class="cs-list">
+            <li>Limited awareness of diverse cultural norms and values, leading to unintentional bias</li>
+            <li>Communication style differences causing misinterpretation and reducing cohesion</li>
+            <li>Need to make cross-cultural collaboration easier for everyday work</li>
+            <li>Inconsistent inclusive practices across teams and departments</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Solutions</h4>
+          <ul class="cs-list">
+            <li>Cross-cultural trend study from top MNCs paired with a gap analysis to define actions</li>
+            <li>Exposure to cultural dimensions and their workplace impact</li>
+            <li>Surfacing and addressing unconscious bias with clear business outcomes</li>
+            <li>Techniques and key factors for building strong cross-cultural relationships</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Outcome</h4>
+          <ul class="cs-list">
+            <li>Deeper understanding of cultural differences and how to navigate them</li>
+            <li>Communication adapted to diverse styles, lifting cohesion and reducing conflict</li>
+            <li>Consistent inclusive practices applied across the organisation</li>
+          </ul>
+        </div>
+
+        <blockquote class="cs-testimonial">
+          <p>&ldquo;The sessions were very well thought through with an immersive learning experience, ensuring participants got the maximum out of these sessions. I personally liked the values and cultural elements integrated in the programme, very core to Toast.&rdquo;</p>
+          <cite>
+            <span class="cs-cite-name">Murali Vasudevan</span>
+            <span class="cs-cite-role">APAC People Leader, Toast</span>
+          </cite>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- ─── 5. LEADERSHIP ESSENTIALS ─── -->
+    <article class="case-study reveal" id="leadership-essentials" data-cluster="leadership">
+      <header class="cs-header">
+        <span class="cs-eyebrow">Leadership Development</span>
+        <h2 class="cs-title">Leadership essentials</h2>
+      </header>
+      <div class="cs-content">
+        <p class="cs-about">Effective leaders inspire and guide their teams towards shared goals. The programme equipped leaders with the critical skills, including communication, decision-making, and conflict resolution, to lead with confidence and integrity. The aim was a positive work environment, lifted productivity, and a culture of innovation and engagement.</p>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Challenges</h4>
+          <ul class="cs-list">
+            <li>Unclear leadership responsibilities and expectations across the organisation</li>
+            <li>Self-management gaps limiting team management effectiveness</li>
+            <li>Communication that lacked clarity and proactivity in decision-making</li>
+            <li>Constructive conflict resolution capability missing from the toolkit</li>
+            <li>Motivation, engagement, and morale needing focused attention</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Solutions</h4>
+          <ul class="cs-list">
+            <li>Leadership assessments surfacing strengths, blind spots, and development areas</li>
+            <li>Self-management principles and reflection to build an inside-out perspective</li>
+            <li>Empathic communication grounded in active listening and effective feedback</li>
+            <li>Frameworks for strategic decision-making, including SWOT and risk assessment</li>
+            <li>Conflict resolution tools including mediation and collaborative problem-solving</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Outcome</h4>
+          <ul class="cs-list">
+            <li>Deeper grasp of effective leadership principles and techniques</li>
+            <li>Active listening and emotional intelligence raised the quality of team conversations</li>
+            <li>Stronger, more informed strategic decisions and constructive conflict handling</li>
+            <li>New strategies for engagement and motivation within teams</li>
+            <li>Skills to navigate organisational change and lead transitions smoothly</li>
+          </ul>
+        </div>
+
+        <blockquote class="cs-testimonial">
+          <p>&ldquo;The LEAP training hosted by Bindu and Priya was a transformative experience for me. One that equipped me with the mindset and skills required to transition from an individual contributor to a confident and effective team leader.&rdquo;</p>
+          <cite>
+            <span class="cs-cite-name">Edwin Jerald</span>
+            <span class="cs-cite-role">Product Marketing Lead</span>
+          </cite>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- ─── 6. TRANSFORMATIVE THINKING ─── -->
+    <article class="case-study reveal" id="transformative-thinking" data-cluster="leadership">
+      <header class="cs-header">
+        <span class="cs-eyebrow">Leadership Development</span>
+        <h2 class="cs-title">Transformative thinking: critical thinking and problem-solving</h2>
+      </header>
+      <div class="cs-content">
+        <p class="cs-about">A programme to equip participants with the skills to navigate complex challenges, make informed decisions, and drive innovation in their teams. Dynamic activities including role-play and real-life simulations were paired with in-depth discussions on self-leadership, overcoming unconscious bias, and developing a solution-oriented mindset.</p>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Challenges</h4>
+          <ul class="cs-list">
+            <li>Operational efficiency and a culture of continuous improvement needed lift</li>
+            <li>Common team issues and complexity navigation needed innovative tools</li>
+            <li>Decision-making under uncertain conditions lacked clear strategies</li>
+            <li>Collaborative problem-solving needed deeper rooting in team culture</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Solutions</h4>
+          <ul class="cs-list">
+            <li>Programme design aligned with strategic objectives, anchored in real case studies</li>
+            <li>Role-playing scenarios and real-life simulations to practise critical thinking</li>
+            <li>Discussions on self-leadership, critical thinking components, and solution mindsets</li>
+            <li>Real-time projects on actual team issues, solved with critical thinking techniques</li>
+            <li>Reflective exercises and peer discussions to deepen application in daily roles</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Outcome</h4>
+          <ul class="cs-list">
+            <li>Enhanced mindset and thought process for critical thinking and problem-solving</li>
+            <li>Innovative solutions surfaced from real-time projects, with notable contributions</li>
+            <li>Greater confidence in handling complex challenges and making informed decisions</li>
+            <li>Stronger teamwork and collaboration, lifting cohesion across the work environment</li>
+          </ul>
+        </div>
+
+        <blockquote class="cs-testimonial">
+          <p>&ldquo;As a leader, I knew things needed to change, but I was missing the &lsquo;how.&rsquo; Bindu&rsquo;s coaching gave me the essential clarity and direction to move forward with confidence.&rdquo;</p>
+          <cite>
+            <span class="cs-cite-name">Akshay Kiran</span>
+            <span class="cs-cite-role">Lead, Product Research</span>
+          </cite>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- ─── 7. MANAGERIAL DEVELOPMENT ─── -->
+    <article class="case-study reveal" id="managerial-development" data-cluster="leadership">
+      <header class="cs-header">
+        <span class="cs-eyebrow">Leadership Development</span>
+        <h2 class="cs-title">Managerial development programme</h2>
+      </header>
+      <div class="cs-content">
+        <p class="cs-about">A programme designed to equip managers with the skills to lead effectively, build cultures of accountability, and drive organisational success. Through interactive learning, participants strengthened communication, decision-making, conflict resolution, and team motivation, with focused work on openness, trust, and adaptability through change.</p>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Challenges</h4>
+          <ul class="cs-list">
+            <li>Aligning busy operational managers' schedules for training</li>
+            <li>Initial hesitation among participants to openly share insights and ideas</li>
+            <li>Building self-leadership for accountability and proactive management</li>
+            <li>Lifting communication for clarity, trust, and collaborative problem-solving</li>
+            <li>Preparing managers to lead through constant change and drive engagement</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Solutions</h4>
+          <ul class="cs-list">
+            <li>Interactive discussions and exercises to encourage open knowledge sharing</li>
+            <li>Self-leadership principles and personal accountability work to build confidence</li>
+            <li>Active listening, clear articulation, and constructive feedback skill-building</li>
+            <li>Change management tools to grow resilience and adaptability</li>
+          </ul>
+        </div>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">Outcome</h4>
+          <ul class="cs-list">
+            <li>Capstone projects shifted managers from task execution to seeing the big picture, with concrete, innovative solutions to real business problems</li>
+            <li>Cross-functional collaboration strengthened as silos were broken down through shared problem-solving</li>
+            <li>Personal vision boards gave clarity on leadership style, aspirations, and intended impact, lifting engagement and retention</li>
+            <li>Sharpened executive presence and the ability to synthesise complex ideas into compelling, high-level narratives</li>
+          </ul>
+        </div>
+
+        <blockquote class="cs-testimonial">
+          <p>&ldquo;While I was familiar with some concepts, the sessions succeeded in clarifying the critical importance of my actions and decisions, specifically regarding their direct impact on team performance and work environment. Bindu was an exceptional coach. The entire training felt designed for maximum, lasting impact.&rdquo;</p>
+          <cite>
+            <span class="cs-cite-name">Sarika Abraham</span>
+            <span class="cs-cite-role">Manager, Media &amp; Public Relations</span>
+          </cite>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- ─── 8. ROBUST HR FUNCTION ─── -->
+    <article class="case-study reveal" id="hr-robust-function" data-cluster="hr">
+      <header class="cs-header">
+        <span class="cs-eyebrow">HR Infrastructure</span>
+        <h2 class="cs-title">Building and driving a robust HR function</h2>
+      </header>
+      <div class="cs-content">
+        <p class="cs-about">Our client is a young, dynamic real estate organisation on a strong growth trajectory, looking to cultivate a high-potential, positive workforce. We partnered with them to build a sustainable framework using best-in-class people strategies, customised processes, and systems that would carry their growth forward.</p>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">What we built</h4>
+          <ul class="cs-list">
+            <li>An HR strategy aligned to business goals, integrated tightly with the wider plan</li>
+            <li>An optimised recruitment process with a clear hiring strategy and detailed job descriptions, fulfilling needs on time and securing the right people at the right cost</li>
+            <li>An enhanced onboarding experience with pre-onboarding engagement and full statutory compliance</li>
+            <li>A clear organisational structure, clarifying hierarchy, roles, and responsibilities</li>
+            <li>An HRMS implementation to automate people processes, lift transparency, and improve data management</li>
+            <li>Employee-centric HR policies that fostered a positive culture and met every regulatory standard</li>
+            <li>A robust performance management system with clear goals, regular reviews, and 360-degree feedback driving individual growth tied to organisational objectives</li>
+          </ul>
+        </div>
+
+        <blockquote class="cs-testimonial">
+          <p>&ldquo;Excellify has been and continues to be a true partner in our growth story. Their HR expertise and dedication, along with their people-first approach, have helped us build a strong team with the required framework of robust systems and processes.&rdquo;</p>
+          <cite>
+            <span class="cs-cite-name">Vivek Nair</span>
+            <span class="cs-cite-role">CEO, Ramsons Trendsquares</span>
+          </cite>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- ─── 9. NGO HR INFRASTRUCTURE ─── -->
+    <article class="case-study reveal" id="hr-infrastructure-ngo" data-cluster="hr">
+      <header class="cs-header">
+        <span class="cs-eyebrow">HR Infrastructure</span>
+        <h2 class="cs-title">HR foundations for an urban governance NGO</h2>
+      </header>
+      <div class="cs-content">
+        <p class="cs-about">Our client is a non-governmental organisation based in India, working to improve urban governance and civic engagement. They focus on transforming the quality of life in urban India by partnering closely with citizens and government institutions. The brief was to establish strong policies, develop an efficient HR platform, build a robust performance evaluation system, and identify and grow high-potential employees.</p>
+
+        <div class="cs-section">
+          <h4 class="cs-section-label">What we built</h4>
+          <ul class="cs-list">
+            <li>HR policies designed around employee well-being and satisfaction, fully aligned with statutory regulations and the realities of NGO operations</li>
+            <li>A recommended HRMS platform to manage operational efficiency, ensure compliance, support data-driven decisions, and improve the employee experience</li>
+            <li>A resilient performance management framework using SMART goals and consistent assessments to foster development and tie individual performance to organisational goals</li>
+            <li>Individual Development Plans built into the review process to guide subsequent development initiatives</li>
+            <li>A process to identify high-potential employees for career advancement by capturing behavioural competencies</li>
+          </ul>
+        </div>
+
+        <blockquote class="cs-testimonial">
+          <p>&ldquo;Excellify has been enabling us to arrive at improved people processes, customising industry best practices to strengthen our culture, and fulfil our commitment to ensure our teams have an enriching, empowering, and fulfilling work environment.&rdquo;</p>
+          <cite>
+            <span class="cs-cite-name">Sapna Karim</span>
+            <span class="cs-cite-role">COO, Janaagraha Centre for Citizenship and Democracy</span>
+          </cite>
+        </blockquote>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cs-end">
+  <div class="cs-end-inner">
+    <span class="cs-end-eyebrow">Have a similar challenge?</span>
+    <h2 class="cs-end-heading">Let&rsquo;s talk about what your <em>team</em> needs next.</h2>
+    <p class="cs-end-sub">Every engagement begins with a conversation. Tell us where you are and where you want to be. We will design the journey from there.</p>
+    <div class="cs-end-actions">
+      <a href="index.html#contact" class="btn btn-primary">Start a conversation <span aria-hidden="true">&rarr;</span></a>
+      <a href="index.html" class="btn btn-ghost">Back to home <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Excellify Co. All rights reserved.
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// HAMBURGER NAV
+// ═══════════════════════════════════════════════════════════
+const hamburger = document.getElementById('navHamburger');
+const drawer    = document.getElementById('navDrawer');
+const overlay   = document.getElementById('navOverlay');
+const closeBtn  = document.getElementById('drawerClose');
+
+function openDrawer() {
+  drawer.classList.add('open');
+  overlay.classList.add('open');
+  hamburger.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  drawer.classList.remove('open');
+  overlay.classList.remove('open');
+  hamburger.classList.remove('open');
+  document.body.style.overflow = '';
+}
+hamburger.addEventListener('click', openDrawer);
+closeBtn.addEventListener('click', closeDrawer);
+overlay.addEventListener('click', closeDrawer);
+document.querySelectorAll('.drawer-link').forEach(link => {
+  link.addEventListener('click', closeDrawer);
+});
+
+// ═══════════════════════════════════════════════════════════
+// FILTER CHIPS
+// ═══════════════════════════════════════════════════════════
+(function() {
+  const chips = document.querySelectorAll('.cs-filter-chip');
+  const grid  = document.getElementById('csGrid');
+  if (!chips.length || !grid) return;
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('is-active'));
+      chip.classList.add('is-active');
+      grid.dataset.filter = chip.dataset.filter;
+    });
+  });
+
+  // If URL has a hash, scroll to that case study (do not auto-filter)
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 200);
+    }
+  }
+})();
+
+// ═══════════════════════════════════════════════════════════
+// REVEAL ON SCROLL
+// ═══════════════════════════════════════════════════════════
+(function() {
+  const els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+  els.forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>
