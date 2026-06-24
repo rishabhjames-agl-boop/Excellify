@@ -10,7 +10,7 @@
 <style>
 :root {
   --white:      #ffffff;
-  --off-white:  #f3f8f5;
+  --off-white:  #f6f3ea;  /* warm cream */
   --forest:     #0d2318;
   --green:      #0d6938;
   --green-mid:  #1a8048;
@@ -87,7 +87,7 @@ nav {
 }
 .nav-back:hover { color: var(--green-hi); }
 .nav-drawer {
-  position: fixed; top: 0; left: 0; height: 100%; width: 340px; max-width: 84vw;
+  position: fixed; top: 0; left: 0; height: 100vh; width: 340px; max-width: 84vw;
   background: var(--forest); padding: 110px 48px 48px;
   transform: translateX(-100%); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
   z-index: 1001;
@@ -136,6 +136,7 @@ em { font-style: italic; color: var(--green); }
   border-bottom: 1px solid var(--border);
 }
 .p-hero-orb {
+  display: none;
   position: absolute; border-radius: 50%; pointer-events: none;
   background: radial-gradient(circle, rgba(61,184,112,0.14), transparent 70%);
   width: 520px; height: 520px; right: -120px; top: -120px;
@@ -278,6 +279,7 @@ footer { background: var(--forest); color: rgba(243,248,245,0.7); padding: 60px 
   <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   <a href="index.html" class="nav-wordmark">Excellify</a>
   <a href="index.html" class="nav-back">&larr; Home</a>
+</nav>
   <div class="nav-drawer" id="navDrawer">
     <button class="drawer-close" id="drawerClose" aria-label="Close">&#x2715;</button>
     <ul class="drawer-links">
@@ -291,7 +293,6 @@ footer { background: var(--forest); color: rgba(243,248,245,0.7); padding: 60px 
     <p class="drawer-tagline">Potential to Excellence</p>
   </div>
   <div class="nav-overlay" id="navOverlay"></div>
-</nav>
 
 <!-- HERO -->
 <section class="p-hero">
