@@ -9,10 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --cursor-dot-color:  #0a3d22;
-  --cursor-dot-glow:   0 0 4px rgba(10,61,34,0.35);
-  --cursor-ring-color: rgba(10,61,34,0.7);
-  --cursor-ring-glow:  0 0 4px rgba(10,61,34,0.12);
+  --cursor-dot-color:  #0d6938;
+  --cursor-dot-glow:   0 0 4px rgba(13,105,56,0.35);
+  --cursor-ring-color: rgba(13,105,56,0.7);
+  --cursor-ring-glow:  0 0 4px rgba(13,105,56,0.12);
   --white:      #ffffff;
   --off-white:  #f6f3ea;  /* warm cream */
   --forest:     #0d2318;
@@ -935,15 +935,15 @@ nav.scrolled {
   z-index: 2;
   margin-left: auto;
   width: 56%;
-  background: rgba(255,255,255,0.82);
+  background: rgba(9,22,16,0.94);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(13,105,56,0.1);
-  border-left: 2px solid var(--green);
+  border: 1px solid rgba(74,196,122,0.14);
+  border-left: 2px solid rgba(74,196,122,0.4);
   padding: 52px 52px 48px;
   box-shadow:
-    -40px 0 80px rgba(13,35,24,0.08),
-    0 24px 64px rgba(13,35,24,0.06);
+    -40px 0 80px rgba(13,35,24,0.20),
+    0 24px 64px rgba(13,35,24,0.14);
 }
 
 .about-role {
@@ -963,7 +963,7 @@ nav.scrolled {
 .about-headline em { font-style: italic; color: var(--green); }
 .about-rule {
   width: 32px; height: 1px;
-  background: var(--champagne);
+  background: rgba(74,196,122,0.4);
   margin: 28px 0;
 }
 .about-body {
@@ -971,21 +971,21 @@ nav.scrolled {
   line-height: 1.85; color: var(--stone);
   margin-bottom: 16px;
 }
-.about-body--dim { color: rgba(28,43,36,0.45); font-size: 13px; }
+.about-body--dim { color: rgba(248,250,248,0.35); font-size: 13px; }
 
 .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
 .tag {
   font-family: 'DM Mono', monospace; font-size: 9.5px;
   letter-spacing: 0.15em; text-transform: uppercase;
   padding: 7px 14px;
-  border: 1px solid rgba(13,105,56,0.25);
-  color: var(--stone);
+  border: 1px solid rgba(74,196,122,0.25);
+  color: rgba(248,250,248,0.4);
   transition: border-color 0.3s ease, color 0.3s ease, transform 0.4s var(--spring);
 }
 .tag:hover {
   transform: scale(1.05);
-  border-color: rgba(13,105,56,0.5);
-  color: var(--green);
+  border-color: rgba(74,196,122,0.5);
+  color: var(--green-hi);
 }
 
 /* Hide old layout classes if still in DOM */
@@ -1051,7 +1051,7 @@ nav.scrolled {
 .contact-headline {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(26px, 2.6vw, 40px); font-weight: 300;
-  color: var(--charcoal); line-height: 1.2;
+  color: var(--green); line-height: 1.2;
   word-break: keep-all;
   overflow-wrap: normal;
   hyphens: none;
@@ -1148,9 +1148,9 @@ footer {
 }
 /* Section-specific text colours (light scheme) */
 #clients .clients-heading { color: var(--stone); }
-#about .about-role { color: var(--green); }
+#about .about-role { color: var(--green-hi); }
 /* About body text */
-#about .about-body { color: var(--stone); }
+#about .about-body { color: rgba(255,255,255,0.7); }
 /* Contact sub */
 #contact .contact-sub { color: var(--stone); }
 #contact .contact-detail { color: rgba(28,43,36,0.78); }
@@ -1158,8 +1158,8 @@ footer {
 /* Intro headline on light bg */
 #intro .intro-headline { color: var(--charcoal); }
 /* About headline */
-#about .about-headline { color: var(--charcoal); }
-#about .about-headline em { color: var(--green); }
+#about .about-headline { color: #ffffff; }
+#about .about-headline em { color: var(--green-hi); }
 
 
 /* ── HERO-INTRO PANEL ─────────────────────────────────────── */
@@ -1870,7 +1870,7 @@ section { position: relative; }
   right: 24px;
   transform: translateY(-50%);
   z-index: 90;
-  display: flex;
+  display: none; /* RHS section nav removed */
   flex-direction: column;
   gap: 14px;
   opacity: 0;
@@ -3229,7 +3229,7 @@ html {
     ring: 'rgba(13,105,56,0.8)',
     ringG:'0 0 8px rgba(13,105,56,0.25)',
   };
-  const DARK_IDS = new Set(['hero','clients','testimonials','about','contact']);
+  const DARK_IDS = new Set(['hero']);
   const root = document.documentElement;
   let isDark = false;
 
@@ -3267,7 +3267,7 @@ html {
 // ═══════════════════════════════════════════════════════════════
 (function() {
   const COLORS = ['#3db870','#0d6938','#ffffff','#0fad4e','rgba(74,196,122,0.6)'];
-  
+  return; // click particle burst disabled per request
   document.addEventListener('click', e => {
     // Skip interactive elements that have their own feedback
     if (e.target.closest('input,textarea,select,a')) return;
@@ -4254,7 +4254,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   }, { passive: true });
 
   // Mark active dot based on current section
-  const DARK_IDS = new Set(['hero','clients','testimonials','about','contact']);
+  const DARK_IDS = new Set(['hero']);
   const sectionIO = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting && entry.intersectionRatio > 0.4) {
